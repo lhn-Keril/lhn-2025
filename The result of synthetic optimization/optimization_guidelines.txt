@@ -1,0 +1,22 @@
+# Carbon Dot Synthesis Optimization Guidelines (Based on XGBoost Model)
+
+## Best FL Prediction Model: XGBoost
+- Test Set R²: 0.9032
+- Top 5 Influential Features:
+  1. Temp_sq
+  2. urea_sq
+  3. Time(h)
+  4. Temp(℃)
+  5. Urea(g)
+
+## Synthesis Recommendations:
+1. Urea amount: 0.8–1.2 g yields higher FL (both lower and higher reduce FL)
+2. Reaction temperature: 150–170 °C optimal (excessive temp causes over-carbonization)
+3. GSH/Urea ratio ≈ 0.2:1 performs best
+4. Reaction time: 6–9 hours ideal; longer duration may cause fluorescence quenching
+5. FA volume: 10–15 mL preferred for better dispersion and FL
+
+## Approximate Prediction Behavior:
+FL ≈ f(GSH, Urea, FA, Temperature, Time, GSH/Urea, Temp×Time, ...)
+
+> Note: The model is tree-based and has no explicit analytical equation. Use the saved model for predictions.
